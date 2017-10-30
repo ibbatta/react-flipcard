@@ -10,9 +10,10 @@
 <img src="./repo_readme_assets/logo-npm.png" height="55">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-yarn.png" height="55">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-es6.png" height="55">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-react.png" height="55">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-webpack.png" height="55">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-babel.png" height="55">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-browserify.png" height="55">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-webpack.png" height="55">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-react.png" height="55">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-sass.png" height="55">&nbsp;&nbsp;
 
 - [x] Yarn / Npm package managers
