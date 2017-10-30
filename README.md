@@ -20,6 +20,7 @@
 - [x] ES6 supported
 - [x] React
 - [x] Babel
+- [x] Browserify
 
 ---
 
