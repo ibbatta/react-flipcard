@@ -4,13 +4,13 @@
   "description": "Simple flipboard card showing weather in react (test)",
   "author": "Maurizio Battaghini",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://github.com/ibbatta/react-flipboard",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ibbatta/react-flipboard"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ibbatta/react-flipboard/issues"
   },
   "license": "MIT",
   "private": true,
@@ -28,7 +28,10 @@
     "start": "echo \"ERROR: no start specified\" && exit 1;",
     "test": "echo \"ERROR: no test specified\" && exit 1;"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
   "devDependencies": {
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
