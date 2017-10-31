@@ -30,16 +30,16 @@ class App extends React.Component {
           </div>
           <div className={style.temperatureWrapper}>
             <span className={style.temperatureText}>
-              54°c
+              54° C
             </span>
           </div>
         </div>
-        <div className="weatherContent">
-          <div className="weatherText">
+        <div className={style.weatherBar}>
+          <div className={style.weatherText}>
             Sunny
           </div>
-          <div className="weatherIconWrapper">
-            <img className="weatherIcon" src={weather} alt="weather-icon" />
+          <div className={style.weatherIconWrapper}>
+            <img className={style.weatherIcon} src={weather} alt="weather-icon" />
           </div>
         </div>
         <div className="bottomBar">

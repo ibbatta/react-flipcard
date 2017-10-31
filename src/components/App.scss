@@ -9,6 +9,7 @@
   padding: 16px;
   &__item {
     width: 100vw;
+    max-width: 480px;
     overflow: hidden;
     border-radius: $border-radius;
     box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);

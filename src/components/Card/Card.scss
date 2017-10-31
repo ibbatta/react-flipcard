@@ -3,7 +3,6 @@
   position: relative;
   height: auto;
   width: 100%;
-  max-width: 480px;
   background: gray; // background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
   color: $white;
 }
@@ -43,10 +42,24 @@
   }
 }
 
-.weatherContent {
-  .weatherText {}
+.weatherBar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  margin-top: 16px;
+  .weatherText {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
   .weatherIconWrapper {
-    .weatherIcon {}
+    width: 100%;
+    max-width: 160px;
+    .weatherIcon {
+      width: 100%;
+    }
   }
 }
 

@@ -9,6 +9,10 @@ body {
   overflow-x: hidden;
   background-color: $white;
   color: $black;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba($black, 0.1);
 }
 
 img {
