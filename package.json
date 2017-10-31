@@ -30,6 +30,7 @@
     "test": "echo \"ERROR: no test specified\" && exit 1;"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.7",
     "dark-sky-api": "^0.6.21",
     "extract-text-webpack-plugin": "^3.0.2",
