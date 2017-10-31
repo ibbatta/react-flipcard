@@ -1,0 +1,79 @@
+@import '../../style/_colors';
+.Card {
+  position: relative;
+  height: auto;
+  width: 100%;
+  background: gray; // background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
+  color: $white;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  height: 80px;
+  .locationWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+    flex-shrink: 2;
+    justify-content: flex-start;
+    .locationIcon {
+      max-height: 24px;
+      max-width: 24px;
+      padding-left: 16px;
+    }
+    .locationText {
+      padding-left: 8px;
+    }
+  }
+  .temperatureWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: space-around;
+    .temperatureText {}
+  }
+}
+
+.weatherBar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  margin-top: 16px;
+  .weatherText {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  .weatherIconWrapper {
+    width: 100%;
+    max-width: 160px;
+    .weatherIcon {
+      width: 100%;
+    }
+  }
+}
+
+.bottomBar {
+  .humidityWrapper {
+    .humidityText {}
+  }
+  .windWrapper {
+    .windText {}
+  }
+}
+
+.calendarBar {
+  .calendarDay {
+    .calendarText {}
+  }
+}
