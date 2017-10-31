@@ -1,45 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import style from './Card.scss';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
+    this.state = {
+      // location: this.props.location,
+    };
   }
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000,
-    );
+    this.state = null;
   }
 
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
-  tick() {
-    this.setState({
-      date: new Date(),
-    });
+  getLocation() {
+    // call html5 api to get user location and set state
+    this.setState({});
   }
 
   render() {
     return (
       <div className={style.Card}>
-        <h1>Hello, {this.props.name}!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        Hello
       </div>
     );
   }
 }
 
-App.propTypes = {
-  name: PropTypes.string,
+/* App.propTypes = {
+  location: PropTypes.string,
 };
 
 App.defaultProps = {
-  name: '',
-};
+  location: 'Rome, Italy',
+}; */
 
 export default App;
