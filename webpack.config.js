@@ -14,5 +14,8 @@ module.exports = {
     path: paths.DIST,
     filename: '[name].bundle.js',
   },
+  devServer: {
+    contentBase: paths.SRC,
+  },
   module: {},
 };

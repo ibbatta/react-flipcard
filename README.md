@@ -1,6 +1,6 @@
-# __REACT WEATHER FLIPBOARD__
+# __REACT WEATHER FLIP-CARD
 
-> WORK IN PROGRESS
+> Simple flipcard showing weather in react.
 
 ---
 
@@ -36,7 +36,7 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone https://github.com/ibbatta/react-flipboard.git`
+- Clone the repo in your folder `git clone https://github.com/ibbatta/react-flipcard.git`
 
 ---
 
