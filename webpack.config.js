@@ -34,20 +34,27 @@ module.exports = {
     rules: [{
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
+      use: ['babel-loader', 'eslint-loader'],
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
       loader: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', postcssLoader],
+        use: [
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          postcssLoader,
+        ],
       }),
     }, {
       test: /\.(sass|scss)$/,
       exclude: /node_modules/,
       loader: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader', postcssLoader, 'sass-loader', 'resolve-url-loader'],
+        use: [
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          postcssLoader,
+          'sass-loader',
+        ],
       }),
     }, {
       test: /\.(png|svg|jpg|gif)$/,

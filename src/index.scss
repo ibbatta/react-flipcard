@@ -12,14 +12,3 @@ body {
   font-size: 16px;
   overflow-x: hidden;
 }
-
-.flex-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  &__flex-item {
-    text-transform: uppercase;
-  }
-}

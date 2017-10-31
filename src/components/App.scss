@@ -1,0 +1,13 @@
+.AppContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  &__item {
+    width: auto;
+    height: auto;
+    flex-basis: auto;
+    flex-wrap: wrap;
+  }
+}
