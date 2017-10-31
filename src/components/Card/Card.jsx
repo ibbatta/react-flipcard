@@ -43,21 +43,53 @@ class App extends React.Component {
           </div>
         </div>
         <div className="bottomBar">
-          <div className="humidity">
-            48% umidità
+          <div className="humidityWrapper">
+            <span className="umidityText">
+              48% umidità
+            </span>
           </div>
-          <div className="wind">
-            46 nodi
+          <div className="windWrapper">
+            <span className="windText">
+              46 nodi
+            </span>
           </div>
         </div>
         <div className="calendarBar">
-          <div className="calendarDay">Mon</div>
-          <div className="calendarDay">Tue</div>
-          <div className="calendarDay">Wed</div>
-          <div className="calendarDay">Thu</div>
-          <div className="calendarDay">Fri</div>
-          <div className="calendarDay">Sat</div>
-          <div className="calendarDay">Sun</div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Mon
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Tue
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Wed
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Thu
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Fri
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Sat
+            </span>
+          </div>
+          <div className="calendarDay">
+            <span className="calendarText">
+              Sun
+            </span>
+          </div>
         </div>
       </div>
     );

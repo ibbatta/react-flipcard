@@ -28,11 +28,28 @@
     flex-grow: 1;
     flex-shrink: 1;
     justify-content: center;
+    .temperatureText {}
   }
 }
 
-.weatherContent {}
+.weatherContent {
+  .weatherText {}
+  .weatherIconWrapper {
+    .weatherIcon {}
+  }
+}
 
-.bottomBar {}
+.bottomBar {
+  .humidityWrapper {
+    .humidityText {}
+  }
+  .windWrapper {
+    .windText {}
+  }
+}
 
-.calendarBar {}
+.calendarBar {
+  .calendarDay {
+    .calendarText {}
+  }
+}
