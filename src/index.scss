@@ -1,14 +1,21 @@
 @import 'style/_reset';
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-html,
+@import 'style/_fonts';
+@import 'style/_colors';
+@import 'style/_variables';
+@import 'style/_responsive';
 body {
-  width: 100vw;
-  min-height: 100vh;
-  height: auto;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight-normal;
+  overflow-x: hidden;
+  background-color: $foreground-color;
+  color: $black;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba($black, 0.1);
 }
 
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  overflow-x: hidden;
+img {
+  max-width: 100%;
 }
