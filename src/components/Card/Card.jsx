@@ -1,8 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import style from './Card.scss';
-import location from '../../img/location-placeholder.svg';
-import weather from '../../img/weather-placeholder.svg';
+import img from '../../img/weather-icon/8.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class App extends React.Component {
       <div className={style.Card}>
         <div className={style.topBar}>
           <div className={style.locationWrapper}>
-            <img className={style.locationIcon} src={location} alt="location-icon" />
+            <img className={style.locationIcon} src="" alt="location-icon" />
             <span className={style.locationText}>Rome, Italy</span>
           </div>
           <div className={style.temperatureWrapper}>
@@ -39,7 +38,7 @@ class App extends React.Component {
             Sunny
           </div>
           <div className={style.weatherIconWrapper}>
-            <img className={style.weatherIcon} src={weather} alt="weather-icon" />
+            <img className={style.weatherIcon} src={img} alt="weather-icon" />
           </div>
         </div>
         <div className="bottomBar">
