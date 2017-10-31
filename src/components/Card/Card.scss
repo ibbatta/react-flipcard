@@ -1,14 +1,16 @@
+@import '../../style/_colors';
 .Card {
   position: relative;
   height: auto;
-  width: 100vw;
+  width: 100%;
   max-width: 480px;
+  background: gray; // background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
+  color: $white;
 }
 
 .topBar {
   display: flex;
   flex-direction: row;
-  background-color: lightyellow;
   justify-content: stretch;
   align-items: center;
   height: 80px;
@@ -36,10 +38,8 @@
     flex-wrap: wrap;
     flex-grow: 1;
     flex-shrink: 1;
-    justify-content: flex-end;
-    .temperatureText {
-      padding-right: 24px;
-    }
+    justify-content: space-around;
+    .temperatureText {}
   }
 }
 

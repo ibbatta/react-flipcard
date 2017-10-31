@@ -1,13 +1,16 @@
+@import '../style/_colors';
+@import '../style/_variables';
 .AppContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 16px;
   &__item {
-    width: auto;
-    height: auto;
-    flex-basis: auto;
-    flex-wrap: wrap;
+    width: 100vw;
+    overflow: hidden;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);
   }
 }
