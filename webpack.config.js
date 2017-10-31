@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 const cssnext = require('postcss-cssnext');
 
 const paths = {
@@ -20,7 +21,7 @@ const postcssLoader = {
 module.exports = {
   context: path.resolve(__dirname, paths.SRC),
   entry: {
-    app: ['./index.jsx'],
+    app: ['react-hot-loader/patch', './index.jsx'],
   },
   output: {
     path: paths.DIST,
@@ -66,6 +67,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('[name].bundle.css'),
     new HtmlWebpackPlugin({
       template: path.join(paths.SRC, 'index.html'),

@@ -1,9 +1,21 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import App from './components/App/App';
 import './index.scss';
 
-function Hello() {
-  return <div>Hello from React.</div>;
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('app'),
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./components/App/App', () => { render(App); });
 }
 
-ReactDom.render(<Hello />, document.getElementById('app'));
