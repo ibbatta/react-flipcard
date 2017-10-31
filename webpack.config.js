@@ -29,6 +29,8 @@ module.exports = {
   },
   devServer: {
     contentBase: paths.SRC,
+    compress: true,
+    port: process.env.PORT || 9000,
   },
   module: {
     rules: [{

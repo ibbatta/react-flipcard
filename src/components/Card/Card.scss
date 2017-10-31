@@ -3,7 +3,8 @@
   position: relative;
   height: auto;
   width: 100%;
-  background: gray; // background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
+  background: gray;
+  background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
   color: $white;
 }
 
