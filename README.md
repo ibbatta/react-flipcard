@@ -1,4 +1,4 @@
-# __REACT WEATHER FLIP-CARD
+# __REACT WEATHER FLIP-CARD__
 
 > Simple flipcard showing weather in react.
 
