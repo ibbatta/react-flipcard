@@ -25,11 +25,11 @@ class App extends React.Component {
       <div className={style.Card}>
         <div className={style.topBar}>
           <div className={style.locationWrapper}>
-            <img className="locationIcon" src={location} alt="location-icon" />
-            <span className="locationText">Rome, Italy</span>
+            <img className={style.locationIcon} src={location} alt="location-icon" />
+            <span className={style.locationText}>Rome, Italy</span>
           </div>
           <div className={style.temperatureWrapper}>
-            <span className="temperatureText">
+            <span className={style.temperatureText}>
               54°c
             </span>
           </div>
