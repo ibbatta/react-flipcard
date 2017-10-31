@@ -1,3 +1,38 @@
 .Card {
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  max-width: 480px;
 }
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  background-color: lightyellow;
+  justify-content: stretch;
+  align-items: center;
+  height: 80px;
+  .locationWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    flex-shrink: 2;
+    justify-content: flex-start;
+  }
+  .temperatureWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+  }
+}
+
+.weatherContent {}
+
+.bottomBar {}
+
+.calendarBar {}
