@@ -1,7 +1,10 @@
 import React from 'react';
+import './App.scss';
 
-function App() {
-  return <h1>Hello React!</h1>;
-}
+const App = () => (
+  <div className="Container">
+    <h1 className="Container__title">Hello React!</h1>
+  </div>
+);
 
 module.exports = App;

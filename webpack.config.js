@@ -34,9 +34,7 @@ module.exports = {
     rules: [{
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      use: [
-        'babel-loader',
-      ],
+      use: ['babel-loader'],
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
@@ -53,14 +51,10 @@ module.exports = {
       }),
     }, {
       test: /\.(png|svg|jpg|gif)$/,
-      use: [
-        'file-loader',
-      ],
+      use: ['file-loader'],
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: [
-        'file-loader',
-      ],
+      use: ['file-loader'],
     }],
   },
   resolve: {
