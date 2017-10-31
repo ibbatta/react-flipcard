@@ -7,7 +7,7 @@ body {
   font-size: $font-size;
   font-weight: $font-weight-normal;
   overflow-x: hidden;
-  background-color: $white;
+  background-color: $foreground-color;
   color: $black;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;

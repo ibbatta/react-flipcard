@@ -1,7 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import style from './Card.scss';
-import img from '../../img/weather-icon/8.svg';
+import pinImg from '../../img/pin.svg';
+import celsiusImg from '../../img/weather-icon/c.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,13 +25,14 @@ class App extends React.Component {
       <div className={style.Card}>
         <div className={style.topBar}>
           <div className={style.locationWrapper}>
-            <img className={style.locationIcon} src="" alt="location-icon" />
+            <img className={style.locationIcon} src={pinImg} alt="location-icon" />
             <span className={style.locationText}>Rome, Italy</span>
           </div>
           <div className={style.temperatureWrapper}>
             <span className={style.temperatureText}>
-              54° C
+              54
             </span>
+            <img className={style.temperatureIcon} src={celsiusImg} alt="temperature-icon" />
           </div>
         </div>
         <div className={style.weatherBar}>
@@ -38,22 +40,28 @@ class App extends React.Component {
             Sunny
           </div>
           <div className={style.weatherIconWrapper}>
-            <img className={style.weatherIcon} src={img} alt="weather-icon" />
+            <img className={style.weatherIcon} src="" alt="weather-icon" />
           </div>
         </div>
-        <div className="bottomBar">
-          <div className="humidityWrapper">
-            <span className="umidityText">
-              48% umidità
+        <div className={style.bottomBar}>
+          <div className={style.humidityWrapper}>
+            <span className={style.humidityText}>
+              Percentuale di umidità
+            </span>
+            <span className={style.humidityText}>
+              48%
             </span>
           </div>
-          <div className="windWrapper">
-            <span className="windText">
-              46 nodi
+          <div className={style.windWrapper}>
+            <span className={style.windText}>
+              Velocità del vento
+            </span>
+            <span className={style.windText}>
+              46 mph
             </span>
           </div>
         </div>
-        <div className="calendarBar">
+        {/* <div className="calendarBar">
           <div className="calendarDay">
             <span className="calendarText">
               Mon
@@ -89,7 +97,7 @@ class App extends React.Component {
               Sun
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

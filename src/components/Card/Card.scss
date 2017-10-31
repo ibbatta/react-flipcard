@@ -1,10 +1,11 @@
 @import '../../style/_colors';
+@import '../../style/_variables';
 .Card {
   position: relative;
   height: auto;
   width: 100%;
   background: gray;
-  background: linear-gradient(to bottom right, $gradientStart, $gradientEnd);
+  background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
   color: $white;
 }
 
@@ -13,7 +14,7 @@
   flex-direction: row;
   justify-content: stretch;
   align-items: center;
-  height: 80px;
+  height: 60px;
   .locationWrapper {
     display: flex;
     flex-direction: row;
@@ -23,12 +24,11 @@
     flex-shrink: 2;
     justify-content: flex-start;
     .locationIcon {
-      max-height: 24px;
-      max-width: 24px;
-      padding-left: 16px;
+      max-width: $icon-width;
+      max-height: $icon-height;
     }
     .locationText {
-      padding-left: 8px;
+      font-size: 20px;
     }
   }
   .temperatureWrapper {
@@ -38,8 +38,15 @@
     flex-wrap: wrap;
     flex-grow: 1;
     flex-shrink: 1;
-    justify-content: space-around;
-    .temperatureText {}
+    justify-content: flex-end;
+    padding-right: 8px;
+    .temperatureText {
+      font-size: 36px;
+    }
+    .temperatureIcon {
+      max-width: $icon-width;
+      max-height: $icon-height;
+    }
   }
 }
 
@@ -50,7 +57,6 @@
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  margin-top: 16px;
   .weatherText {
     font-size: 3rem;
     text-transform: uppercase;
@@ -65,11 +71,56 @@
 }
 
 .bottomBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  height: 60px;
   .humidityWrapper {
-    .humidityText {}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+    flex-shrink: 2;
+    justify-content: flex-start;
+    padding-left: 16px;
+    .humidityText {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-items: flex-start;
+      &:nth-child(2) {
+        font-weight: 700;
+        margin-top: 4px;
+      }
+    }
   }
   .windWrapper {
-    .windText {}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    flex-shrink: 2;
+    justify-content: flex-end;
+    padding-right: 16px;
+    .windText {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      flex-shrink: 1;
+      align-items: flex-end;
+      &:nth-child(2) {
+        font-weight: 700;
+        margin-top: 4px;
+      }
+    }
   }
 }
 

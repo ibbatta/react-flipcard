@@ -91,5 +91,15 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 
 
+## __Todo__
+
+- [ ] Refactory css
+- [ ] Write js tests
+
+
+---
+
+
+
 > GitHub [@ibbatta](https://github.com/ibbatta) &nbsp;&middot;&nbsp;
 > Twitter [@battago](https://twitter.com/battago)
