@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const cssnext = require('postcss-cssnext');
 
 const paths = {
-  DIST: path.join(__dirname, 'dist'),
+  DIST: path.join(__dirname, 'docs'),
   SRC: path.join(__dirname, 'src'),
 };
 
