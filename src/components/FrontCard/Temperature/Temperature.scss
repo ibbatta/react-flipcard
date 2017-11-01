@@ -1,0 +1,19 @@
+@import '../../../style/_variables';
+.temperatureWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: flex-end;
+  padding-right: 8px;
+  .temperatureText {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+  }
+  .temperatureIcon {
+    max-width: $icon-width;
+    max-height: $icon-height;
+  }
+}

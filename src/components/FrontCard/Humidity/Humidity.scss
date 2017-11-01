@@ -1,0 +1,34 @@
+@import '../../../style/_responsive';
+@import '../../../style/_variables';
+.humidityWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 2;
+  flex-shrink: 2;
+  justify-content: flex-start;
+  padding-left: 8px;
+  flex: 1;
+  text-align: left;
+  font-size: 1.75rem;
+  font-weight: 300;
+  @include responsive(xs) {
+    font-size: 1rem;
+    font-weight: $font-weight-normal;
+    padding-left: 16px;
+  }
+  .humidityText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: flex-start;
+    &:nth-child(2) {
+      font-weight: $font-weight-bold;
+      margin-top: 4px;
+    }
+  }
+}

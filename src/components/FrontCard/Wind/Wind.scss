@@ -1,0 +1,34 @@
+@import '../../../style/_responsive';
+@import '../../../style/_variables';
+.windWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  flex-shrink: 2;
+  justify-content: flex-end;
+  padding-right: 8px;
+  flex: 1;
+  text-align: right;
+  font-size: 1.75rem;
+  font-weight: $font-weight-thin;
+  @include responsive(xs) {
+    font-size: 1rem;
+    font-weight: $font-weight-normal;
+    padding-right: 16px;
+  }
+  .windText {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: flex-end;
+    &:nth-child(2) {
+      font-weight: $font-weight-bold;
+      margin-top: 4px;
+    }
+  }
+}
