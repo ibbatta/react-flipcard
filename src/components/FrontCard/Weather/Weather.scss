@@ -14,6 +14,7 @@
   .weatherText {
     font-size: 3.5rem;
     text-transform: uppercase;
+    text-align: center;
     @include responsive(xs) {
       font-size: 2rem;
     }

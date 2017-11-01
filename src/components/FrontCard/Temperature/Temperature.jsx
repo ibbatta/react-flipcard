@@ -5,54 +5,48 @@ import celsiusImg from '../../../img/weather-icon/c.svg';
 import fahrenheitImg from '../../../img/weather-icon/f.svg';
 import defaultImg from '../../../img/weather-icon/thermometer.svg';
 
-class App extends React.Component {
+class Temperature extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      unit: this.props.unit,
-      temperature: this.props.temperature,
-    };
-  }
-
-  componentWillMount() {
-    this.getTemperatureUnit();
+    this.state = {};
   }
 
   getTemperatureUnit() {
-    switch (this.state.unit) {
+    let setImg;
+    switch (this.props.temperatureUnit) {
       case 'c':
-        this.state.img = celsiusImg;
+        setImg = celsiusImg;
         break;
       case 'f':
-        this.state.img = fahrenheitImg;
+        setImg = fahrenheitImg;
         break;
       default:
-        this.state.img = defaultImg;
+        setImg = defaultImg;
         break;
     }
-    return this.state.img;
+    return setImg;
   }
 
   render() {
     return (
       <div className={style.temperatureWrapper}>
         <span className={style.temperatureText}>
-          {this.state.temperature}
+          {this.props.temperature}
         </span>
-        <img className={style.temperatureIcon} src={this.state.img} alt="temperature-icon" />
+        <img className={style.temperatureIcon} src={this.getTemperatureUnit()} alt="temperature-icon" />
       </div>
     );
   }
 }
 
-App.propTypes = {
-  unit: PropTypes.string,
+Temperature.propTypes = {
   temperature: PropTypes.number,
+  temperatureUnit: PropTypes.string,
 };
 
-App.defaultProps = {
-  unit: null,
+Temperature.defaultProps = {
   temperature: 0,
+  temperatureUnit: null,
 };
 
-export default App;
+export default Temperature;

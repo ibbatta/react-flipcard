@@ -5,9 +5,12 @@ import style from './Wind.scss';
 class Wind extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      wind: this.props.wind,
-    };
+    this.state = {};
+  }
+
+  convertWindSpeed() {
+    const mphRatio = 2.23694;
+    return (this.props.windspeed * mphRatio).toFixed(2);
   }
 
   render() {
@@ -17,7 +20,7 @@ class Wind extends React.Component {
           Velocità del vento
         </span>
         <span className={style.windText}>
-          {this.state.wind}
+          {this.convertWindSpeed()}{this.props.windspeedUnit}
         </span>
       </div>
     );
@@ -25,11 +28,13 @@ class Wind extends React.Component {
 }
 
 Wind.propTypes = {
-  wind: PropTypes.number,
+  windspeed: PropTypes.number,
+  windspeedUnit: PropTypes.string,
 };
 
 Wind.defaultProps = {
-  wind: 0,
+  windspeed: 0,
+  windspeedUnit: null,
 };
 
 export default Wind;

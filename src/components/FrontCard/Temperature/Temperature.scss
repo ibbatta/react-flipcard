@@ -10,6 +10,7 @@
   padding-right: 8px;
   .temperatureText {
     font-size: 36px;
+    font-weight: $font-weight-bold;
   }
   .temperatureIcon {
     max-width: $icon-width;

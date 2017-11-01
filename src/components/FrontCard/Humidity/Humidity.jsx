@@ -5,9 +5,7 @@ import style from './Humidity.scss';
 class Humidity extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      humidity: this.props.humidity,
-    };
+    this.state = {};
   }
 
   render() {
@@ -17,7 +15,7 @@ class Humidity extends React.Component {
           Percentuale umidità
         </span>
         <span className={style.humidityText}>
-          {this.state.humidity}
+          {this.props.humidity}%
         </span>
       </div>
     );
