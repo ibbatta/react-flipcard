@@ -1,0 +1,27 @@
+@import '../../style/_colors';
+@import '../../style/_variables';
+@import '../../style/_responsive';
+.Card {
+  position: relative;
+  height: auto;
+  width: 100%;
+  background: gray;
+  background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
+  color: $white;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  min-height: 60px;
+}
+
+.bottomBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-end;
+  min-height: 60px;
+}

@@ -1,0 +1,17 @@
+@import '../../../style/_variables';
+.locationWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 2;
+  flex-shrink: 2;
+  justify-content: flex-start;
+  .locationIcon {
+    max-width: $icon-width;
+    max-height: $icon-height;
+  }
+  .locationText {
+    font-size: 20px;
+  }
+}
