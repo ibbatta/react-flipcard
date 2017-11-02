@@ -1,5 +1,4 @@
 import React from 'react';
-// import DarkSkyApi from 'dark-sky-api';
 import FrontCard from './FrontCard/FrontCard';
 import style from './App.scss';
 
@@ -22,13 +21,17 @@ class App extends React.Component {
         const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
         const config = {
           method: 'GET',
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-          },
           mode: 'cors',
           cache: 'default',
           credentials: 'omit',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+            'Access-Control-Allow-Origin': '*://*/*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Credentials': true,
+            'cache-control': 'no-cache',
+          },
         };
         fetch(apiUrl, config)
           .then(response => response.json())
@@ -50,12 +53,12 @@ class App extends React.Component {
               });
             }
           }).catch((err) => {
-            console.error(`ERROR(${err.code}): ${err.message}`); //eslint-disable-line
+            console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
           });
       };
 
       const error = (err) => {
-        console.error(`ERROR(${err.code}): ${err.message}`); //eslint-disable-line
+        console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
       };
       navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
