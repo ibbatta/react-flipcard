@@ -1,7 +1,6 @@
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cssnext = require('postcss-cssnext');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const envConfig = process.env.NODE_ENV === 'production' ? require('./config/webpack.prod.config') : require('./config/webpack.dev.config');
 const pathConfig = require('./config/path.config');
 
@@ -15,13 +14,15 @@ const postcssLoader = {
 };
 
 module.exports = merge(envConfig, {
-  context: pathConfig.CONTEXT,
   output: {
-    path: pathConfig.DIST,
     filename: '[name].bundle.js',
   },
   module: {
     rules: [{
+      test: /\.(html|xhtml|xml|hbs|ejs)$/,
+      exclude: /(node_modules|index\.html)/,
+      loader: 'file-loader',
+    }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       use: ['babel-loader', 'eslint-loader'],
@@ -48,10 +49,20 @@ module.exports = merge(envConfig, {
       }),
     }, {
       test: /\.(png|svg|jpg|gif)$/,
-      use: ['file-loader'],
+      exclude: /node_modules/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        publicPath: '/',
+      },
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: ['file-loader'],
+      exclude: /node_modules/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        publicPath: '/',
+      },
     }],
   },
   resolve: {
@@ -61,10 +72,6 @@ module.exports = merge(envConfig, {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin([pathConfig.DIST], {
-      root: __dirname,
-      verbose: true,
-    }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',
     }),

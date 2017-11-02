@@ -64,11 +64,32 @@ yarn
 
 ## __Run the project__
 
+##### run the project to develop
 ```bash
-#WORK IN PROGRESS
+npm start
+# or
+yarn start
+```
+
+
+##### run the project to production
+``` bash
+npm run build
+#or
+yarn build
+```
+
+
+##### run the tests
+``` bash
+# WORK IN PROGRESS (actually doesn't work)
+npm run test
+#or
+yarn test
 ```
 
 ---
+
 
 
 # __Editor setup__

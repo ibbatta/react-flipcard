@@ -1,4 +1,5 @@
 const glob = require('glob');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
@@ -18,12 +19,16 @@ module.exports = {
   entry: {
     app: [pathConfig.INDEX_JS],
   },
+  output: {
+    publicPath: pathConfig.DIST,
+    path: pathConfig.DIST,
+  },
   plugins: [
-    new WebpackPlugin.optimize.OccurrenceOrderPlugin(),
-    new MinifyPlugin(minifyOpts, pluginOpts),
-    new UglifyJSPlugin({
-      sourceMap: true,
+    new CleanWebpackPlugin([pathConfig.DIST], {
+      root: __dirname,
+      verbose: true,
     }),
+    new WebpackPlugin.optimize.OccurrenceOrderPlugin(),
     new PurifyCSSPlugin({
       styleExtensions: ['.css', '.scss'],
       moduleExtensions: ['.html'],
@@ -34,5 +39,9 @@ module.exports = {
       },
       paths: glob.sync(pathConfig.INDEX_HTML),
     }),
+    new UglifyJSPlugin({
+      sourceMap: true,
+    }),
+    new MinifyPlugin(minifyOpts, pluginOpts),
   ],
 };

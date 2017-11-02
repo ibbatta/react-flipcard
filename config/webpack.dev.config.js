@@ -8,10 +8,15 @@ module.exports = {
   entry: {
     dev: ['react-hot-loader/patch', pathConfig.INDEX_JS],
   },
+  output: {
+    path: pathConfig.DIST,
+  },
   devServer: {
     contentBase: pathConfig.SRC,
     compress: true,
     port: process.env.PORT || 9000,
+    inline: true,
+    hot: true,
   },
   plugins: [
     new WebpackPlugin.HotModuleReplacementPlugin(),
