@@ -15,37 +15,37 @@ class Calendar extends React.Component {
       <div className={style.calendarBar}>
         <div className={style.calendarDay}>
           <span className={style.calendarText}>
-            Mon
+            Lun
           </span>
         </div>
         <div className={style.calendarDay}>
           <span className={style.calendarText}>
-            Tue
+            Mar
           </span>
         </div>
         <div className={style.calendarDay}>
           <span className={style.calendarText}>
-            Wen
+            Mer
           </span>
         </div>
         <div className={classNames(style.calendarDay, this.state.isActual ? style.actual : null)}>
           <span className={style.calendarText}>
-            Thu
+            Gio
           </span>
         </div>
         <div className={style.calendarDay} >
           <span className={style.calendarText}>
-            Fri
+            Ven
           </span>
         </div>
         <div className={style.calendarDay}>
           <span className={style.calendarText}>
-            Sat
+            Sab
           </span>
         </div>
         <div className={style.calendarDay}>
           <span className={style.calendarText}>
-            Sun
+            Dom
           </span>
         </div>
       </div>
