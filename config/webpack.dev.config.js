@@ -15,8 +15,6 @@ module.exports = {
     contentBase: pathConfig.SRC,
     compress: true,
     port: process.env.PORT || 9000,
-    inline: true,
-    hot: true,
   },
   plugins: [
     new WebpackPlugin.HotModuleReplacementPlugin(),

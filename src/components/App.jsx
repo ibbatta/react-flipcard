@@ -23,12 +23,13 @@ class App extends React.Component {
         const config = {
           method: 'GET',
           headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
             'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Credentials': true,
+            'cache-control': 'no-cache',
           },
-          mode: 'cors',
-          cache: 'default',
-          credentials: 'omit',
         };
         fetch(apiUrl, config)
           .then(response => response.json())
@@ -50,12 +51,12 @@ class App extends React.Component {
               });
             }
           }).catch((err) => {
-            console.error(`ERROR(${err.code}): ${err.message}`); //eslint-disable-line
+            console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
           });
       };
 
       const error = (err) => {
-        console.error(`ERROR(${err.code}): ${err.message}`); //eslint-disable-line
+        console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
       };
       navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
