@@ -1,13 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const webpack = require('webpack');
 const cssnext = require('postcss-cssnext');
-
-const paths = {
-  DIST: path.join(__dirname, 'docs'),
-  SRC: path.join(__dirname, 'src'),
-};
+const envConfig = process.env.NODE_ENV === 'production' ? require('./config/webpack.prod.config') : require('./config/webpack.dev.config');
+const pathConfig = require('./config/path.config');
 
 const postcssLoader = {
   loader: 'postcss-loader',
@@ -18,22 +14,16 @@ const postcssLoader = {
   },
 };
 
-module.exports = {
-  context: path.resolve(__dirname, paths.SRC),
-  entry: {
-    app: ['react-hot-loader/patch', './index.jsx'],
-  },
+module.exports = merge(envConfig, {
   output: {
-    path: paths.DIST,
     filename: '[name].bundle.js',
-  },
-  devServer: {
-    contentBase: paths.SRC,
-    compress: true,
-    port: process.env.PORT || 9000,
   },
   module: {
     rules: [{
+      test: /\.(html|xhtml|xml|hbs|ejs)$/,
+      exclude: /(node_modules|index\.html)/,
+      loader: 'file-loader',
+    }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       use: ['babel-loader', 'eslint-loader'],
@@ -60,22 +50,35 @@ module.exports = {
       }),
     }, {
       test: /\.(png|svg|jpg|gif)$/,
-      use: ['file-loader'],
+      exclude: /node_modules/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        publicPath: './',
+      },
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: ['file-loader'],
+      exclude: /node_modules/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        publicPath: './',
+      },
     }],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      pathConfig.CONTEXT, 'node_modules',
+    ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].bundle.css'),
-    new HtmlWebpackPlugin({
-      template: path.join(paths.SRC, 'index.html'),
-      inject: true,
-      cache: false,
+    new CleanWebpackPlugin([process.env.NODE_ENV === 'production' ? pathConfig.DIST : ''], {
+      root: __dirname,
+      verbose: true,
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].bundle.css',
     }),
   ],
-};
+});

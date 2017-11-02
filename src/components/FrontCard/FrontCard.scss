@@ -8,6 +8,11 @@
   background: gray;
   background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
   color: $white;
+  backface-visibility: hidden;
+  transition: transform .5s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
 }
 
 .topBar {
