@@ -1,4 +1,5 @@
 import React from 'react';
+import 'whatwg-fetch';
 import FrontCard from './FrontCard/FrontCard';
 import style from './App.scss';
 
