@@ -40,6 +40,11 @@ build/
 # Dependency directories
 node_modules/
 jspm_packages/
+bower_components/
+
+# Firebase config files
+firebase.*
+.firebaserc
 
 # Typescript v1 declaration files
 typings/
@@ -55,6 +60,8 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
+*.zip
+*.tgzip
 
 # Yarn Integrity file
 .yarn-integrity
