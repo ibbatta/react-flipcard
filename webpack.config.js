@@ -1,13 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const webpack = require('webpack');
 const cssnext = require('postcss-cssnext');
-
-const paths = {
-  DIST: path.join(__dirname, 'docs'),
-  SRC: path.join(__dirname, 'src'),
-};
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const envConfig = process.env.NODE_ENV === 'production' ? require('./config/webpack.prod.config') : require('./config/webpack.dev.config');
+const pathConfig = require('./config/path.config');
 
 const postcssLoader = {
   loader: 'postcss-loader',
@@ -18,19 +14,11 @@ const postcssLoader = {
   },
 };
 
-module.exports = {
-  context: path.resolve(__dirname, paths.SRC),
-  entry: {
-    app: ['react-hot-loader/patch', './index.jsx'],
-  },
+module.exports = merge(envConfig, {
+  context: pathConfig.CONTEXT,
   output: {
-    path: paths.DIST,
+    path: pathConfig.DIST,
     filename: '[name].bundle.js',
-  },
-  devServer: {
-    contentBase: paths.SRC,
-    compress: true,
-    port: process.env.PORT || 9000,
   },
   module: {
     rules: [{
@@ -68,14 +56,17 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      pathConfig.CONTEXT, 'node_modules',
+    ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].bundle.css'),
-    new HtmlWebpackPlugin({
-      template: path.join(paths.SRC, 'index.html'),
-      inject: true,
-      cache: false,
+    new CleanWebpackPlugin([pathConfig.DIST], {
+      root: __dirname,
+      verbose: true,
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].bundle.css',
     }),
   ],
-};
+});
