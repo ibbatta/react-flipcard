@@ -19,21 +19,16 @@ class App extends React.Component {
       const success = (pos) => {
         // const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
         const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
-        const config = {
+        const request = new Request(apiUrl, {
           method: 'GET',
           mode: 'cors',
-          cache: 'default',
-          credentials: 'omit',
+          redirect: 'follow',
           headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-            'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-            'Access-Control-Allow-Origin': '*://*/*',
-            'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow-Credentials': true,
-            'cache-control': 'no-cache',
+            'Content-Type': 'text/json; charset=utf-8',
           },
-        };
-        fetch(apiUrl, config)
+        });
+
+        fetch(request)
           .then(response => response.json())
           .then((json) => {
             console.log('RESPONSE', json); //eslint-disable-line
