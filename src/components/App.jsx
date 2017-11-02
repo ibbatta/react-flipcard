@@ -1,5 +1,4 @@
 import React from 'react';
-// import DarkSkyApi from 'dark-sky-api';
 import FrontCard from './FrontCard/FrontCard';
 import style from './App.scss';
 
@@ -22,10 +21,13 @@ class App extends React.Component {
         const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
         const config = {
           method: 'GET',
+          mode: 'cors',
+          cache: 'default',
+          credentials: 'omit',
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
             'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': '*://*/*',
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Allow-Credentials': true,
             'cache-control': 'no-cache',
