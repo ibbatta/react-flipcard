@@ -24,7 +24,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: pathConfig.INDEX_HTML,
       inject: true,
-      cache: false,
     }),
   ],
 };

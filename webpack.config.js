@@ -1,4 +1,5 @@
 const merge = require('webpack-merge');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cssnext = require('postcss-cssnext');
 const envConfig = process.env.NODE_ENV === 'production' ? require('./config/webpack.prod.config') : require('./config/webpack.dev.config');
@@ -53,7 +54,7 @@ module.exports = merge(envConfig, {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        publicPath: '/',
+        publicPath: './',
       },
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -61,7 +62,7 @@ module.exports = merge(envConfig, {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        publicPath: '/',
+        publicPath: './',
       },
     }],
   },
@@ -72,6 +73,10 @@ module.exports = merge(envConfig, {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin([process.env.NODE_ENV === 'production' ? pathConfig.DIST : ''], {
+      root: __dirname,
+      verbose: true,
+    }),
     new ExtractTextPlugin({
       filename: '[name].bundle.css',
     }),
