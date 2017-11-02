@@ -93,10 +93,18 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## __Todo__
 
-- [ ] Refactory css
 - [ ] Optimize webpack build for production
-- [ ] Write js tests
+- [ ] Refactory css
+- [ ] Write tests
 
+
+---
+
+
+## __Credits__
+
+- [Weatherbit.io](https://api.weatherbit.io) (weather free api)
+- [Yihsuan Lu](http://www.yihsuanlu.com/) (weather free icon pack)
 
 ---
 
