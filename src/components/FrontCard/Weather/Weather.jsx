@@ -28,6 +28,7 @@ class Weather extends React.Component {
     const code = parseInt(this.props.weatherCode, 10);
     const weatherPod = this.props.pod;
 
+    // TODO: refactory code weather and icons
     if (code === 800) {
       if (weatherPod === 'd') {
         weatherImg = img1;
@@ -44,7 +45,7 @@ class Weather extends React.Component {
       }
     }
 
-    if (code >= 230 && code <= 233) {
+    if ((code >= 230 && code <= 233) || code === 502) {
       weatherImg = img4;
     }
 

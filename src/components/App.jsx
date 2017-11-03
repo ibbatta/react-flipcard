@@ -8,6 +8,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       lang: 'it',
+      temperatureUnit: 'c',
+      windspeedUnit: 'mph',
     };
   }
 
@@ -40,9 +42,7 @@ class App extends React.Component {
                 city: data.city_name,
                 country: data.country_code,
                 temperature: data.temp,
-                temperatureUnit: 'c',
                 windspeed: data.wind_spd,
-                windspeedUnit: 'mph',
                 humidity: data.rh,
                 weatherCode: data.weather.code,
                 weatherDescription: data.weather.description,
