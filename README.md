@@ -20,6 +20,7 @@
 - [x] React
 - [x] Babel
 - [x] Webpack
+- [x] Moment for date manipulations
 
 ---
 
@@ -116,6 +117,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 - [ ] Optimize webpack build for production
 - [ ] Refactory css
+- [ ] Add i18n for messages
 - [ ] Write tests
 
 

@@ -36,7 +36,7 @@ class FrontCard extends React.Component {
           <Humidity humidity={this.props.humidity} />
           <Wind windspeed={this.props.windspeed} windspeedUnit={this.props.windspeedUnit} />
         </div>
-        <Calendar />
+        <Calendar lang={this.props.lang} />
       </div>
     );
   }
@@ -53,6 +53,7 @@ FrontCard.propTypes = {
   pod: PropTypes.string,
   weatherCode: PropTypes.string,
   weatherDescription: PropTypes.string,
+  lang: PropTypes.string,
 };
 
 FrontCard.defaultProps = {
@@ -66,6 +67,7 @@ FrontCard.defaultProps = {
   pod: null,
   weatherCode: null,
   weatherDescription: '---',
+  lang: 'Undefined',
 };
 
 export default FrontCard;
