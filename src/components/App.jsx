@@ -6,7 +6,9 @@ import style from './App.scss';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      lang: 'it',
+    };
   }
 
   componentDidMount() {
@@ -19,7 +21,7 @@ class App extends React.Component {
 
       const success = (pos) => {
         // const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
-        const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
+        const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=${this.state.lang}&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
         const request = new Request(apiUrl, {
           method: 'GET',
           mode: 'cors',
@@ -32,7 +34,6 @@ class App extends React.Component {
         fetch(request)
           .then(response => response.json())
           .then((json) => {
-            console.log('RESPONSE', json); //eslint-disable-line
             if (json && json.data && json.data[0]) {
               const data = json.data[0];
               self.setState({
@@ -77,6 +78,7 @@ class App extends React.Component {
             weatherCode={this.state.weatherCode}
             weatherDescription={this.state.weatherDescription}
             pod={this.state.pod}
+            lang={this.state.lang}
           />
         </div>
       </div>

@@ -27,7 +27,6 @@ class Weather extends React.Component {
     let weatherImg = defaultImg;
     const code = parseInt(this.props.weatherCode, 10);
     const weatherPod = this.props.pod;
-    console.log(code, weatherPod); //eslint-disable-line
 
     if (code === 800) {
       if (weatherPod === 'd') {
