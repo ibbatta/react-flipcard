@@ -1,6 +1,7 @@
 import React from 'react';
 import 'whatwg-fetch';
 import FrontCard from './FrontCard/FrontCard';
+import BackCard from './BackCard/BackCard';
 import style from './App.scss';
 
 class App extends React.Component {
@@ -80,6 +81,7 @@ class App extends React.Component {
             pod={this.state.pod}
             lang={this.state.lang}
           />
+          <BackCard />
         </div>
       </div>
     );

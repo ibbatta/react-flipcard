@@ -6,12 +6,24 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: auto;
   padding: 0 16px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  &:hover,
+  .hover,
+  .flip {
+    .AppContainer__item {
+      transform: rotateY(180deg);
+    }
+  }
   &__item {
-    width: 100vw;
+    width: 100%;
     max-width: 480px;
-    overflow: hidden;
-    border-radius: $border-radius;
-    box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);
+    transition: .4s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+    backface-visibility: hidden;
   }
 }

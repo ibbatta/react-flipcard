@@ -14,25 +14,13 @@
   box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);
 }
 
-.CardFront {
-  position: relative;
+.CardBack {
   background: gray;
   background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
   color: $white;
-  z-index: 2;
-  transform: rotateY(0deg);
-  .topBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: center;
-    min-height: 60px;
-  }
-  .bottomBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: flex-end;
-    min-height: 60px;
+  z-index: 1;
+  transform: rotateY(180deg);
+  .prova {
+    color: $black;
   }
 }

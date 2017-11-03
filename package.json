@@ -27,6 +27,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack --display-error-details",
+    "firebase": "NODE_ENV=production webpack --display-error-details && firebase deploy",
     "test": "echo \"ERROR: no test specified\" && exit 1;"
   },
   "dependencies": {
