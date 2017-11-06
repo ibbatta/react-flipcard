@@ -17,7 +17,6 @@
   box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);
   z-index: 1;
   transform: rotateY(180deg);
-  .__MapContainer {
-    color: $white;
-  }
+  box-sizing: border-box;
+  border: 8px solid $gradient-start;
 }

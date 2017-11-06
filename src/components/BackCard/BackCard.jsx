@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import style from './BackCard.scss';
 
+import GoogleMap from './GoogleMap/GoogleMap';
+
 class BackCard extends React.Component {
   constructor(props) {
     super(props);
@@ -19,18 +21,10 @@ class BackCard extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-    this.initMap();
-  }
-
-  initMap() {
-    console.log(`STATE: Lat ${this.state.lat} - Lng ${this.state.lng}`);
-  }
-
   render() {
     return (
       <div className={classNames(style.Card, style.CardBack)}>
-        <div id="map" className={style.CardBack__MapContainer}>&nbsp;</div>
+        <GoogleMap lat={this.state.lat} lng={this.state.lng} />
       </div>
     );
   }

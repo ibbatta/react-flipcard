@@ -3,7 +3,7 @@
 @import '../../style/_responsive';
 .CardFront {
   position: relative;
-  background: gray;
+  background: $gradient-start;
   background: linear-gradient(to bottom right, $gradient-start, $gradient-end);
   color: $white;
   width: 100%;

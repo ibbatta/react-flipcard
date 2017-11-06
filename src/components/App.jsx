@@ -48,8 +48,6 @@ class App extends React.Component {
           lng: pos.coords.longitude,
         });
 
-        console.log(`lat=${this.state.lat}&lon=${this.state.lng}`);
-
         fetch(request)
           .then(response => response.json())
           .then((json) => {
@@ -122,7 +120,7 @@ class App extends React.Component {
             pod={this.state.pod}
             lang={this.state.lang}
           />
-          <BackCard lat={this.state.lat} lng={this.state.long} apikey={googleMapApiKey} />
+          <BackCard lat={this.state.lat} lng={this.state.lng} apikey={googleMapApiKey} />
         </div>
       </div>
     );
