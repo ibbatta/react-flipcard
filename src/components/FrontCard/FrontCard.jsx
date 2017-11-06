@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import classNames from 'classnames';
 import Location from './Location/Location';
 import Temperature from './Temperature/Temperature';
 import Weather from './Weather/Weather';
@@ -19,7 +19,7 @@ class FrontCard extends React.Component {
 
   render() {
     return (
-      <div className={style.Card}>
+      <div className={classNames(style.Card, style.CardFront)}>
         <div className={style.topBar}>
           <Location city={this.props.city} country={this.props.country} />
           <Temperature

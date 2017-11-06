@@ -27,6 +27,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack --display-error-details",
+    "firebase": "NODE_ENV=production webpack --display-error-details && firebase deploy",
     "test": "echo \"ERROR: no test specified\" && exit 1;"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
+    "google-maps-react": "^1.1.2",
     "html-webpack-plugin": "^2.30.1",
     "moment": "^2.19.1",
     "prop-types": "^15.6.0",
