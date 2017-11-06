@@ -2,21 +2,14 @@
 @import '../style/_variables';
 .AppContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: auto;
   padding: 0 16px;
   perspective: 1000px;
   transform-style: preserve-3d;
-  &:hover,
-  .hover,
-  .flip {
-    .AppContainer__item {
-      transform: rotateY(180deg);
-    }
-  }
   &__item {
     width: 100%;
     max-width: 480px;
@@ -25,5 +18,25 @@
     transform-style: preserve-3d;
     position: relative;
     backface-visibility: hidden;
+    &.hover,
+    &.flipped,
+    &.active {
+      transform: rotateY(180deg);
+    }
+  }
+  &__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: none;
+    background-color: rgba($white, 0.5);
+    box-shadow: none;
+    border: 1px dashed #ccc;
+    outline: none;
+  }
+  &__img {
+    width: 100%;
+    max-width: 48px;
   }
 }
