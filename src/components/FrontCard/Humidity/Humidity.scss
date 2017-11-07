@@ -1,5 +1,5 @@
-@import '../../../style/_responsive';
 @import '../../../style/_variables';
+@import '../../../style/_responsive';
 .humidityWrapper {
   display: flex;
   flex-direction: column;
@@ -11,10 +11,10 @@
   padding-left: 8px;
   flex: 1;
   text-align: left;
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   font-weight: 300;
   @include responsive(xs) {
-    font-size: 1rem;
+    font-size: 1.35rem;
     font-weight: $font-weight-normal;
     padding-left: 16px;
   }
