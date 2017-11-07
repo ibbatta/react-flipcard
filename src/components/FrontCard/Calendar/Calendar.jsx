@@ -25,19 +25,19 @@ class Calendar extends React.Component {
 
   render() {
     return (
-      <div className={style.calendarBar}>
+      <div className={style.CalendarBar}>
         {
           this.state.calendarWeekDays.map((day, index) => (
             <div
               key={day}
               className={
                 classNames(
-                  style.calendarDay,
-                  index === new Date().getDay() ? style.actual : null,
+                  style.CalendarBar__CalendarDay,
+                  index === new Date().getDay() ? style.CalendarBar__CalendarDay_actual : null,
                 )
               }
             >
-              <span className={style.calendarText}>
+              <span className={style.CalendarBar__CalendarText}>
                 {day}
               </span>
             </div>

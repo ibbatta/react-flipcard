@@ -29,11 +29,11 @@ class Temperature extends React.Component {
 
   render() {
     return (
-      <div className={style.temperatureWrapper}>
-        <span className={style.temperatureText}>
+      <div className={style.TemperatureWrapper}>
+        <span className={style.TemperatureWrapper__temperatureText}>
           {this.props.temperature}
         </span>
-        <img className={style.temperatureIcon} src={this.getTemperatureUnit()} alt="temperature-icon" />
+        <img className={style.TemperatureWrapper__temperatureIcon} src={this.getTemperatureUnit()} alt="temperature-icon" />
       </div>
     );
   }

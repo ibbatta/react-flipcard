@@ -11,9 +11,16 @@ class Location extends React.Component {
 
   render() {
     return (
-      <div className={style.locationWrapper}>
-        <img className={style.locationIcon} src={pinImg} alt="location-icon" />
-        <span className={style.locationText}>{this.props.city}, {this.props.country}</span>
+      <div className={style.LocationWrapper}>
+        <img
+          className={style.LocationWrapper__LocationIcon}
+          src={pinImg}
+          alt="location-icon"
+        />
+        <span
+          className={style.LocationWrapper__LocationText}
+        >{this.props.city}, {this.props.country}
+        </span>
       </div>
     );
   }

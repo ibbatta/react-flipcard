@@ -86,11 +86,11 @@ class Weather extends React.Component {
 
   render() {
     return (
-      <div className={style.weatherBar}>
-        <div className={style.weatherIconWrapper}>
-          <img className={style.weatherIcon} src={this.checkWeatherIcon()} alt="weather-icon" />
+      <div className={style.WeatherBar}>
+        <div className={style.WeatherBar__WeatherIconWrapper}>
+          <img className={style.WeatherBar__WeatherIcon} src={this.checkWeatherIcon()} alt="weather-icon" />
         </div>
-        <div className={style.weatherText}>
+        <div className={style.WeatherBar__WeatherText}>
           {this.props.weatherDescription}
         </div>
       </div>

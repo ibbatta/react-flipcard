@@ -1,32 +1,29 @@
+@import '../../../style/_variables';
 @import '../../../style/_responsive';
-.weatherBar {
+.WeatherBar {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
-  margin: 1em auto;
+  min-height: 200px;
+  margin: 0;
+  padding-bottom: 24px;
   @include responsive(xs) {
-    min-height: 200px;
+    min-height: 320px;
     margin: 0 auto;
+    padding-bottom: 0;
   }
-  .weatherText {
-    font-size: 3.5rem;
+  &__WeatherText {
+    font-size: 2rem;
     text-transform: uppercase;
     text-align: center;
-    @include responsive(xs) {
-      font-size: 2rem;
-    }
   }
-  .weatherIconWrapper {
+  &__WeatherIconWrapper {
     width: 100%;
-    max-width: 240px;
-    @include responsive(xs) {
-      max-width: 160px;
-    }
-    .weatherIcon {
-      width: 100%;
-    }
+    max-width: 160px;
+  }
+  &__WeatherIcon {
+    width: 100%;
   }
 }

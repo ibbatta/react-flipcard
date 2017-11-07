@@ -1,5 +1,6 @@
 @import '../../../style/_variables';
-.locationWrapper {
+@import '../../../style/_responsive';
+.LocationWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,11 +8,18 @@
   flex-grow: 2;
   flex-shrink: 2;
   justify-content: flex-start;
-  .locationIcon {
-    max-width: $icon-width;
-    max-height: $icon-height;
+  &__LocationIcon {
+    max-width: $icon-width-xs;
+    max-height: $icon-height-xs;
+    @include responsive(xs) {
+      max-width: $icon-width;
+      max-height: $icon-height;
+    }
   }
-  .locationText {
-    font-size: 20px;
+  &__LocationText {
+    font-size: $font-size-xs;
+    @include responsive(xs) {
+      font-size: $font-size-sm;
+    }
   }
 }

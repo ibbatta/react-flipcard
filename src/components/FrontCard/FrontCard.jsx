@@ -20,7 +20,9 @@ class FrontCard extends React.Component {
   render() {
     return (
       <div className={classNames(style.Card, style.CardFront)}>
-        <div className={style.topBar}>
+        <div className={
+          classNames(style.CardFront__FlexItem, style.CardFront__FlexItem_AlignCenter)}
+        >
           <Location city={this.props.city} country={this.props.country} />
           <Temperature
             temperature={this.props.temperature}
@@ -32,7 +34,9 @@ class FrontCard extends React.Component {
           weatherCode={this.props.weatherCode}
           weatherDescription={this.props.weatherDescription}
         />
-        <div className={style.bottomBar}>
+        <div className={
+          classNames(style.CardFront__FlexItem, style.CardFront__FlexItem_AlignBottom)}
+        >
           <Humidity humidity={this.props.humidity} />
           <Wind windspeed={this.props.windspeed} windspeedUnit={this.props.windspeedUnit} />
         </div>

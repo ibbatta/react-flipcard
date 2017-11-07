@@ -17,18 +17,20 @@
   box-shadow: 0 4px 8px rgba($black, 0.16), 0 4px 8px rgba($black, 0.24);
   z-index: 2;
   transform: rotateY(0deg);
-  .topBar {
+  &__FlexItem {
     display: flex;
     flex-direction: row;
     justify-content: stretch;
-    align-items: center;
     min-height: 60px;
-  }
-  .bottomBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: stretch;
     align-items: flex-end;
-    min-height: 60px;
+    @include responsive(xs) {
+      align-items: normal;
+    }
+    &_AlignCenter {
+      align-items: center;
+    }
+    &_AlignEnd {
+      align-items: flex-end;
+    }
   }
 }

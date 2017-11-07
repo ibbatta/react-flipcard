@@ -11,10 +11,10 @@
   padding-right: 8px;
   flex: 1;
   text-align: right;
-  font-size: 1.75rem;
+  font-size: 1.2rem;
   font-weight: $font-weight-thin;
   @include responsive(xs) {
-    font-size: 1rem;
+    font-size: 1.35rem;
     font-weight: $font-weight-normal;
     padding-right: 16px;
   }

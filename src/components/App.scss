@@ -1,5 +1,6 @@
 @import '../style/_colors';
 @import '../style/_variables';
+@import '../style/_responsive';
 .AppContainer {
   display: flex;
   flex-direction: column;
@@ -7,9 +8,11 @@
   align-items: center;
   min-height: 100vh;
   width: auto;
-  padding: 0 16px;
   perspective: 1000px;
   transform-style: preserve-3d;
+  @include responsive(xs) {
+    padding: 0 16px;
+  }
   &__item {
     width: 100%;
     max-width: 480px;

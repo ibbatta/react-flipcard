@@ -115,8 +115,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## __Todo__
 
-- [ ] Optimize webpack build for production
-- [ ] Refactory css
+- [x] Optimize webpack build for production
+- [x] Refactory css
+- [ ] Refactory js
 - [ ] Add i18n for messages
 - [ ] Write tests
 

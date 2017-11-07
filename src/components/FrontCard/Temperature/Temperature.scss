@@ -1,5 +1,6 @@
 @import '../../../style/_variables';
-.temperatureWrapper {
+@import '../../../style/_responsive';
+.TemperatureWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,12 +9,19 @@
   flex-shrink: 1;
   justify-content: flex-end;
   padding-right: 8px;
-  .temperatureText {
-    font-size: 36px;
+  &__temperatureText {
+    font-size: $font-size;
     font-weight: $font-weight-bold;
+    @include responsive(xs) {
+      font-size: $font-size-md;
+    }
   }
-  .temperatureIcon {
-    max-width: $icon-width;
-    max-height: $icon-height;
+  &__temperatureIcon {
+    max-width: $icon-width-xs;
+    max-height: $icon-height-xs;
+    @include responsive(xs) {
+      max-width: $icon-width;
+      max-height: $icon-height;
+    }
   }
 }
