@@ -23,6 +23,18 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentWillMount() {
+    if (navigator.geolocation) {
+      this.setState({
+        geolocationSupported: true,
+      });
+    } else {
+      this.setState({
+        geolocationSupported: false,
+      });
+    }
+  }
+
   componentDidMount() {
     const self = this;
 
@@ -69,6 +81,9 @@ class App extends React.Component {
       // HTML5 GEO-LOCATION ERROR
       const error = (err) => {
         console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
+        this.setState({
+          geolocationSupported: false,
+        });
       };
 
       navigator.geolocation.getCurrentPosition(success, error, {
@@ -102,26 +117,28 @@ class App extends React.Component {
           <img className={style.AppContainer__img} src={iconBtn} alt="flip-icon" />
           <span>{this.state.isFlipped ? 'Weather' : 'Map'}</span>
         </button>
-        <div
-          className={
-            classNames(style.AppContainer__item, this.state.isFlipped ? style.flipped : null)
-          }
-        >
-          <FrontCard
-            temperatureUnit={this.state.temperatureUnit}
-            windspeedUnit={this.state.windspeedUnit}
-            temperature={this.state.temperature}
-            windspeed={this.state.windspeed}
-            city={this.state.city}
-            country={this.state.country}
-            humidity={this.state.humidity}
-            weatherCode={this.state.weatherCode}
-            weatherDescription={this.state.weatherDescription}
-            pod={this.state.pod}
-            lang={this.state.lang}
-          />
-          <BackCard lat={this.state.lat} lng={this.state.lng} />
-        </div>
+        {!this.state.geolocationSupported ? <h1>Geolocation is not supported</h1> : (
+          <div
+            className={
+              classNames(style.AppContainer__item, this.state.isFlipped ? style.flipped : null)
+            }
+          >
+            <FrontCard
+              temperatureUnit={this.state.temperatureUnit}
+              windspeedUnit={this.state.windspeedUnit}
+              temperature={this.state.temperature}
+              windspeed={this.state.windspeed}
+              city={this.state.city}
+              country={this.state.country}
+              humidity={this.state.humidity}
+              weatherCode={this.state.weatherCode}
+              weatherDescription={this.state.weatherDescription}
+              pod={this.state.pod}
+              lang={this.state.lang}
+            />
+            <BackCard lat={this.state.lat} lng={this.state.lng} />
+          </div>
+        )}
       </div>
     );
   }
