@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from '../../Loader/Loader';
 import style from './Temperature.scss';
-import celsiusImg from '../../../img/weather-icon/c.svg';
-import fahrenheitImg from '../../../img/weather-icon/f.svg';
-import defaultImg from '../../../img/weather-icon/thermometer.svg';
+import temperatureCelsiusImg from '../../../img/weather-icon/c.svg';
+import temperatureFahrenheitImg from '../../../img/weather-icon/f.svg';
+import temperaturePlaceholderImg from '../../../img/weather-icon/thermometer.svg';
 
 class Temperature extends React.Component {
   constructor(props) {
@@ -12,28 +13,22 @@ class Temperature extends React.Component {
   }
 
   getTemperatureUnit() {
-    let setImg;
-    switch (this.props.temperatureUnit) {
-      case 'c':
-        setImg = celsiusImg;
-        break;
-      case 'f':
-        setImg = fahrenheitImg;
-        break;
-      default:
-        setImg = defaultImg;
-        break;
-    }
-    return setImg;
+    if (this.props.temperatureUnit.toLowerCase() === 'c') return temperatureCelsiusImg;
+    if (this.props.temperatureUnit.toLowerCase() === 'f') return temperatureFahrenheitImg;
+    return temperaturePlaceholderImg;
   }
 
   render() {
     return (
       <div className={style.TemperatureWrapper}>
         <span className={style.TemperatureWrapper__temperatureText}>
-          {this.props.temperature}
+          {!this.props.temperature ? <Loader /> : this.props.temperature}
         </span>
-        <img className={style.TemperatureWrapper__temperatureIcon} src={this.getTemperatureUnit()} alt="temperature-icon" />
+        <img
+          className={style.TemperatureWrapper__temperatureIcon}
+          src={this.getTemperatureUnit()}
+          alt="temperature-icon"
+        />
       </div>
     );
   }
@@ -45,7 +40,7 @@ Temperature.propTypes = {
 };
 
 Temperature.defaultProps = {
-  temperature: 0,
+  temperature: null,
   temperatureUnit: null,
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import 'whatwg-fetch';
+import CONSTANTS from './../../config/variables.config';
 import FrontCard from './FrontCard/FrontCard';
 import BackCard from './BackCard/BackCard';
 import style from './App.scss';
@@ -8,17 +9,16 @@ import mapImg from '../img/map.svg';
 import weatherImg from '../img/weather.svg';
 
 let iconBtn = mapImg;
-const weatherApiKey = 'eed4cc3e34d141e2922a0ea06dc8cb4f';
-const googleMapApiKey = 'AIzaSyDMC-w0Zmbbn9fVlTsabWhZns71ePpLLeA';
+const weatherApiKey = CONSTANTS.WEATHER_API_KEY;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isFlipped: false,
-      lang: 'it',
-      temperatureUnit: 'c',
-      windspeedUnit: 'mph',
+      lang: CONSTANTS.language,
+      temperatureUnit: CONSTANTS.temperatureUnit,
+      windspeedUnit: CONSTANTS.windSpeedUnit,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -26,13 +26,10 @@ class App extends React.Component {
   componentDidMount() {
     const self = this;
 
+    // Check if browser support html5 geolocation
     if (navigator.geolocation) {
-      const options = {
-        enableHighAccuracy: true,
-      };
-
+      // HTML5 GEO-LOCATION SUCCESS
       const success = (pos) => {
-        // const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=it&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=eed4cc3e34d141e2922a0ea06dc8cb4f`;
         const apiUrl = `https://api.weatherbit.io/v2.0/current?lang=${this.state.lang}&lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&key=${weatherApiKey}`;
         const request = new Request(apiUrl, {
           method: 'GET',
@@ -69,11 +66,14 @@ class App extends React.Component {
           });
       };
 
+      // HTML5 GEO-LOCATION ERROR
       const error = (err) => {
         console.error(`ERROR (${err.code}): ${err.message}`); //eslint-disable-line
       };
 
-      navigator.geolocation.getCurrentPosition(success, error, options);
+      navigator.geolocation.getCurrentPosition(success, error, {
+        enableHighAccuracy: true,
+      });
     } else {
       console.error('Your browser does not support geolocation'); //eslint-disable-line
     }
@@ -120,7 +120,7 @@ class App extends React.Component {
             pod={this.state.pod}
             lang={this.state.lang}
           />
-          <BackCard lat={this.state.lat} lng={this.state.lng} apikey={googleMapApiKey} />
+          <BackCard lat={this.state.lat} lng={this.state.lng} />
         </div>
       </div>
     );

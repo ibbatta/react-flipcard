@@ -1,0 +1,41 @@
+.LoaderWrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding: 16px 0;
+  margin: 0 auto;
+  text-align: center;
+  &__Element {
+    position: relative;
+    font-size: 20px;
+    opacity: 0;
+    display: inline-block;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: translateX(0);
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation: LoadingWeather 3s #{((3-$i+1)/10)}s infinite ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes LoadingWeather {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  66% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+}
