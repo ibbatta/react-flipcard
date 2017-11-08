@@ -116,7 +116,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## __Todo__
 
-- [x] Optimize webpack build for production
+- [x] Webpack build optimization for production
+- [x] Code optimization (css and js refactoring)
 - [ ] Manage errors and when browser doesn't support Html5 geolocation
 - [ ] Add i18n for messages
 - [ ] Write tests
@@ -129,6 +130,13 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 - [Weatherbit.io](https://api.weatherbit.io) (weather free api)
 - [Yihsuan Lu](http://www.yihsuanlu.com/) (weather free icon pack)
+
+---
+
+
+### __Troubleshootings__ ###
+
+This is just a personal project created for study / demonstration purpose only, it may or may not be a good fit for your project(s).
 
 ---
 
