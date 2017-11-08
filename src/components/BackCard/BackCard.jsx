@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import style from './BackCard.scss';
-
 import GoogleMap from './GoogleMap/GoogleMap';
+import style from './BackCard.scss';
 
 class BackCard extends React.Component {
   constructor(props) {

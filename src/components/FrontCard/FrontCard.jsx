@@ -7,7 +7,6 @@ import Weather from './Weather/Weather';
 import Humidity from './Humidity/Humidity';
 import Wind from './Wind/Wind';
 import Calendar from './Calendar/Calendar';
-
 import style from './FrontCard.scss';
 
 
@@ -61,8 +60,8 @@ FrontCard.propTypes = {
 };
 
 FrontCard.defaultProps = {
-  city: 'Undefined',
-  country: 'Undefined',
+  city: '---',
+  country: '---',
   temperature: 0,
   temperatureUnit: null,
   humidity: 0,
@@ -71,7 +70,7 @@ FrontCard.defaultProps = {
   pod: null,
   weatherCode: null,
   weatherDescription: '---',
-  lang: 'Undefined',
+  lang: null,
 };
 
 export default FrontCard;

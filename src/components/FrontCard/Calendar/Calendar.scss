@@ -35,17 +35,17 @@
     font-size: 0;
     text-transform: capitalize;
     @include responsive(xs) {
-      font-size: $font-size;
+      font-size: $font-size-sm;
       visibility: visible;
       width: auto;
     }
     &:first-letter {
       visibility: visible;
       font-weight: $font-weight-bold;
-      font-size: 1.2rem;
+      font-size: $font-size;
       @include responsive(xs) {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: $font-size-sm;
       }
     }
   }

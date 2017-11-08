@@ -32,8 +32,8 @@ Location.propTypes = {
 };
 
 Location.defaultProps = {
-  city: 'Undefined',
-  country: 'Undefined',
+  city: '---',
+  country: '---',
 };
 
 export default Location;
