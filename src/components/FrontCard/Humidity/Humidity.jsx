@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from '../../Loader/Loader';
 import style from './Humidity.scss';
 
 class Humidity extends React.Component {
@@ -15,7 +16,7 @@ class Humidity extends React.Component {
           Percentuale umidità
         </span>
         <span className={style.humidityText}>
-          {this.props.humidity}%
+          {!this.props.humidity ? <Loader /> : `${this.props.humidity}%`}
         </span>
       </div>
     );
@@ -27,7 +28,7 @@ Humidity.propTypes = {
 };
 
 Humidity.defaultProps = {
-  humidity: 0,
+  humidity: null,
 };
 
 export default Humidity;

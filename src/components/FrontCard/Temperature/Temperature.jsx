@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from '../../Loader/Loader';
 import style from './Temperature.scss';
 import temperatureCelsiusImg from '../../../img/weather-icon/c.svg';
 import temperatureFahrenheitImg from '../../../img/weather-icon/f.svg';
@@ -21,7 +22,7 @@ class Temperature extends React.Component {
     return (
       <div className={style.TemperatureWrapper}>
         <span className={style.TemperatureWrapper__temperatureText}>
-          {this.props.temperature}
+          {!this.props.temperature ? <Loader /> : this.props.temperature}
         </span>
         <img
           className={style.TemperatureWrapper__temperatureIcon}
@@ -39,7 +40,7 @@ Temperature.propTypes = {
 };
 
 Temperature.defaultProps = {
-  temperature: 0,
+  temperature: null,
   temperatureUnit: null,
 };
 

@@ -12,6 +12,7 @@
     display: inline-block;
     perspective: 1000px;
     transform-style: preserve-3d;
+    transform: translateX(0);
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
         animation: LoadingWeather 3s #{((3-$i+1)/10)}s infinite ease-in-out;
@@ -23,7 +24,7 @@
 @keyframes LoadingWeather {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
   33% {
     opacity: 1;
@@ -35,6 +36,6 @@
   }
   100% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(200%);
   }
 }
