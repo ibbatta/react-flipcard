@@ -120,7 +120,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [x] Code optimization (css and js refactoring)
 - [ ] Manage errors and when browser doesn't support Html5 geolocation
 - [ ] Add i18n for messages
-- [ ] Write tests
+- [ ] Add tests
 
 
 ---
