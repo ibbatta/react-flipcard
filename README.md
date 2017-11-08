@@ -21,6 +21,7 @@
 - [x] Babel
 - [x] Webpack
 - [x] Moment for date manipulations
+- [x] Google map visual geolocalization
 
 ---
 

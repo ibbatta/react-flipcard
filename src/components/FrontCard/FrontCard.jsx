@@ -60,16 +60,16 @@ FrontCard.propTypes = {
 };
 
 FrontCard.defaultProps = {
-  city: '---',
-  country: '---',
-  temperature: 0,
+  city: null,
+  country: null,
+  temperature: null,
   temperatureUnit: null,
-  humidity: 0,
-  windspeed: 0,
+  humidity: null,
+  windspeed: null,
   windspeedUnit: null,
   pod: null,
   weatherCode: null,
-  weatherDescription: '---',
+  weatherDescription: null,
   lang: null,
 };
 
