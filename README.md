@@ -21,6 +21,7 @@
 - [x] Babel
 - [x] Webpack
 - [x] Moment for date manipulations
+- [x] Google map visual geolocalization
 
 ---
 
@@ -116,7 +117,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 ## __Todo__
 
 - [x] Optimize webpack build for production
-- [x] Refactory css
+- [ ] Manage errors and when browser doesn't support Html5 geolocation
+- [ ] Refactory css
 - [ ] Refactory js
 - [ ] Add i18n for messages
 - [ ] Write tests

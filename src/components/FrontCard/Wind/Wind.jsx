@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from '../../Loader/Loader';
 import style from './Wind.scss';
 
 class Wind extends React.Component {
@@ -20,7 +21,7 @@ class Wind extends React.Component {
           Velocità del vento
         </span>
         <span className={style.windText}>
-          {this.convertWindSpeed()}{this.props.windspeedUnit}
+          {!this.props.windspeed ? <Loader /> : `${this.convertWindSpeed()}${this.props.windspeedUnit}`}
         </span>
       </div>
     );
@@ -33,7 +34,7 @@ Wind.propTypes = {
 };
 
 Wind.defaultProps = {
-  windspeed: 0,
+  windspeed: null,
   windspeedUnit: null,
 };
 
