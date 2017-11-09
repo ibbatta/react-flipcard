@@ -118,7 +118,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 - [x] Webpack build optimization for production
 - [x] Code optimization (css and js refactoring)
-- [ ] Manage errors and when browser doesn't support Html5 geolocation
+- [ ] Manage errors when browser doesn't support Html5 geolocation
 - [ ] Add i18n for messages
 - [ ] Add tests
 
