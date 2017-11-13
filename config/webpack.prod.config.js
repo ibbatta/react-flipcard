@@ -40,5 +40,10 @@ module.exports = {
       cache: false,
       filename: '../dist/index.html',
     }),
+    new WebpackPlugin.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
   ],
 };
