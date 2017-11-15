@@ -36,8 +36,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const self = this;
-
     // Check if browser support html5 geolocation
     if (navigator.geolocation) {
       // HTML5 GEO-LOCATION SUCCESS
@@ -62,7 +60,7 @@ class App extends React.Component {
           .then((json) => {
             if (json && json.data && json.data[0]) {
               const data = json.data[0];
-              self.setState({
+              this.setState({
                 city: data.city_name,
                 country: data.country_code,
                 temperature: data.temp,
